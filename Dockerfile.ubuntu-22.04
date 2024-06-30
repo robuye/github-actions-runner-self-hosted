@@ -1,0 +1,7 @@
+FROM summerwind/actions-runner:ubuntu-22.04
+USER root
+RUN apt-get update -qy \
+    && apt-get install -y --no-install-recommends --fix-missing \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+USER runner
